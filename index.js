@@ -49,7 +49,7 @@ function invokeAction({ action, id, name, email, phone }) {
       break;
 
     case "remove":
-      removeContact(id).then((removedContact) => {
+      removeContact(id.toString()).then((removedContact) => {
         if (removedContact) {
           console.log(`Удаленый контакт с ID:${id}`);
           console.log(removedContact);

@@ -32,9 +32,9 @@ export async function removeContact(contactId) {
     if (contactIndex === -1) {
       return null;
     }
-    const removeContact = contacts.slice(contactIndex, 1)[0];
+    const removedContact = contacts.splice(contactIndex, 1)[0];
     await fs.writeFile(contactPath, JSON.stringify(contacts, null, 2));
-    return removeContact;
+    return removedContact;
   } catch (error) {
     throw error;
   }
