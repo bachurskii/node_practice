@@ -35,7 +35,7 @@ function invokeAction({ action, id, name, email, phone }) {
           console.log(`Контакт с ID:${id}`);
           console.log(contacts);
         } else {
-          console.error(null);
+          console.log(null);
         }
       });
       break;
