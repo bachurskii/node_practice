@@ -5,7 +5,7 @@ import {
   getContactsById,
   removeContact,
   addContact,
-} from "./contact.js";
+} from "./contacts.js";
 import { Command } from "commander";
 
 const program = new Command();
