@@ -25,8 +25,7 @@ function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
       listContact().then((contacts) => {
-        console.log("Список контактов");
-        console.log(contacts);
+        console.table(contacts);
       });
       break;
 
@@ -36,14 +35,13 @@ function invokeAction({ action, id, name, email, phone }) {
           console.log(`Контакт с ID:${id}`);
           console.log(contacts);
         } else {
-          console.error("Нету такого контакта");
+          console.error(null);
         }
       });
       break;
 
     case "add":
       addContact(name, email, phone).then((newContact) => {
-        console.log("Добавлен новый контакт");
         console.log(newContact);
       });
       break;
@@ -51,10 +49,9 @@ function invokeAction({ action, id, name, email, phone }) {
     case "remove":
       removeContact(id.toString()).then((removedContact) => {
         if (removedContact) {
-          console.log(`Удаленый контакт с ID:${id}`);
           console.log(removedContact);
         } else {
-          console.error("Нету такого контакта");
+          console.log(null);
         }
       });
       break;
