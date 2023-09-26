@@ -9,18 +9,14 @@ export async function listContact() {
   try {
     const data = await fs.readFile(contactPath, "utf-8");
     return JSON.parse(data);
-  } catch (error) {
-    throw error;
-  }
+  } catch (error) {}
 }
 
 export async function getContactsById(contactId) {
   try {
     const contacts = await listContact();
     return contacts.find((contact) => contact.id === contactId) || null;
-  } catch (error) {
-    throw error;
-  }
+  } catch (error) {}
 }
 
 export async function removeContact(contactId) {
@@ -35,9 +31,7 @@ export async function removeContact(contactId) {
     const removedContact = contacts.splice(contactIndex, 1)[0];
     await fs.writeFile(contactPath, JSON.stringify(contacts, null, 2));
     return removedContact;
-  } catch (error) {
-    throw error;
-  }
+  } catch (error) {}
 }
 export async function addContact(name, email, phone) {
   try {
@@ -51,7 +45,5 @@ export async function addContact(name, email, phone) {
     contacts.push(newContact);
     await fs.writeFile(contactPath, JSON.stringify(contacts, null, 2));
     return newContact;
-  } catch (error) {
-    throw error;
-  }
+  } catch (error) {}
 }

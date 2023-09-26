@@ -32,10 +32,7 @@ function invokeAction({ action, id, name, email, phone }) {
     case "get":
       getContactsById(id).then((contacts) => {
         if (contacts) {
-          console.log(`Контакт с ID:${id}`);
           console.log(contacts);
-        } else {
-          console.log(null);
         }
       });
       break;
@@ -50,8 +47,6 @@ function invokeAction({ action, id, name, email, phone }) {
       removeContact(id.toString()).then((removedContact) => {
         if (removedContact) {
           console.log(removedContact);
-        } else {
-          console.log(null);
         }
       });
       break;
