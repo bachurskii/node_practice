@@ -15,7 +15,9 @@ export async function listContact() {
 export async function getContactsById(contactId) {
   try {
     const contacts = await listContact();
-    return contacts.find((contact) => contact.id === contactId) || null;
+    return (
+      contacts.find((contact) => contact.id === contactId) || console.log(null)
+    );
   } catch (error) {}
 }
 
@@ -26,6 +28,7 @@ export async function removeContact(contactId) {
       (contact) => contact.id === contactId
     );
     if (contactIndex === -1) {
+      console.log(null);
       return null;
     }
     const removedContact = contacts.splice(contactIndex, 1)[0];
