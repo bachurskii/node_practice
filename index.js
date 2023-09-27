@@ -31,9 +31,7 @@ function invokeAction({ action, id, name, email, phone }) {
 
     case "get":
       getContactsById(id).then((contacts) => {
-        if (contacts) {
-          console.log(contacts);
-        }
+        console.log(contacts);
       });
       break;
 
@@ -45,9 +43,7 @@ function invokeAction({ action, id, name, email, phone }) {
 
     case "remove":
       removeContact(id.toString()).then((removedContact) => {
-        if (removedContact) {
-          console.log(removedContact);
-        }
+        console.log(removedContact);
       });
       break;
 
